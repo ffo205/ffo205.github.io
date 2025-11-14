@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Francesca O'Hop</title>
+    <meta name="description" content="Professional CV and experience of Francesca O'Hop">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+</head>
+<body data-theme="light" data-menu="fixed">
+    <!-- Loader -->
+    <div id="loaded"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header js-main-header scrolled" data-blur="on">
+        <div class="main-header__layout">
+            <div class="main-header__inner">
+                <div class="main-header__logo">
+                    <div class="logo-dark">
+                        <a href="index.html">
+                            <img src="static/images/logos/logos-with-background.png" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                    <div class="logo-light">
+                        <a href="index.html">
+                            <img src="static/images/logos/logos-with-background-white.jpg" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                </div>
+                
+                <nav class="main-header__nav js-main-header__nav main-header__default">
+                    <ul class="navbar-nav">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item current-menu-item"><a href="cv.html">CV</a></li>
+                        <li class="menu-item"><a href="editor-services.html">Editor Services</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="main-header--widgets">
+                    <div class="ms_theme_mode">
+                        <div class="ms_tm--inner">
+                            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                                <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <mask class="moon" id="moon-mask">
+                                        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                                        <circle cx="18" cy="8" r="8" fill="black"></circle>
+                                    </mask>
+                                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+                                    <g class="sun-beams" stroke="currentColor">
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="main-header__nav-trigger js-main-header__nav-trigger" aria-label="Toggle menu">
+                        <i class="main-header__nav-trigger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ms-main">
+        <div class="ms-page-content">
+            <!-- Hero Section with Bio and Image -->
+            <section class="cv-hero">
+                <div class="cv-hero__container">
+                    <div class="cv-hero__image">
+                        <img src="static/images/francesca.webp" alt="Francesca O'Hop">
+                    </div>
+                    <div class="cv-hero__content">
+                        <h1 class="cv-hero__name">Francesca Florentyna O'Hop</h1>
+                        <div class="cv-hero__meta">
+                            <span>27 years old</span>
+                            <span class="cv-hero__separator">/</span>
+                            <span>she/her/hers</span>
+                        </div>
+                        <div class="cv-hero__location">
+                            <span>New York</span>
+                            <span class="cv-hero__separator">/</span>
+                            <span>Washington D.C.</span>
+                            <span class="cv-hero__separator">/</span>
+                            <span>Remote</span>
+                        </div>
+                        <p class="cv-hero__bio">
+                            I am a creative and detail-oriented Video Editor with extensive experience in
+                            editing, visual effects, and audio production. I am proficient in
+                            industry-standard software, managing multiple projects, delivering high-quality work under tight
+                            deadlines, and collaborating with cross-functional teams. I am skilled in
+                            website management and screenwriting, with a strong background in producing and
+                            post-production for various media formats.
+                        </p>
+                        <a href="#" class="cv-hero__download">Download My CV Here</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- My Services -->
+            <section class="cv-services">
+                <div class="cv-services__container">
+                    <h2 class="cv-section-title">My Services</h2>
+                    <div class="cv-services__grid">
+                        <div class="cv-service-card">
+                            <div class="cv-service-card__icon">🎬</div>
+                            <h3 class="cv-service-card__title">Editing Services</h3>
+                            <p class="cv-service-card__text">Adobe Premiere, Adobe Audition, Adobe After Effects, Blender</p>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-card__icon">✍️</div>
+                            <h3 class="cv-service-card__title">Screenwriting</h3>
+                            <p class="cv-service-card__text">Final Draft 12</p>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-card__icon">🎨</div>
+                            <h3 class="cv-service-card__title">Design</h3>
+                            <p class="cv-service-card__text">WordPress, Elementor, Digital and Traditional Art</p>
+                        </div>
+                        <div class="cv-service-card">
+                            <div class="cv-service-card__icon">🎤</div>
+                            <h3 class="cv-service-card__title">Appearances</h3>
+                            <p class="cv-service-card__text">Lectures, Workshops, and more!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Categories -->
+            <!-- Editing & Post-Production -->
+            <section class="cv-portfolio-section">
+                <div class="cv-portfolio__container">
+                    <h2 class="cv-section-title">Editing & Post-Production</h2>
+                    <div class="cv-portfolio-grid-visual">
+                        <a href="portfolios/internal-corporate-videos.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/ypo.jpg" alt="Internal Corporate Videos">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Internal Corporate Videos</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/memories-of-camille.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/memoriesofcamille.jpg" alt="Memories of Camille">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Memories of Camille</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/the-measure-of-ones-worth.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/measure.png" alt="The Measure of One's Worth">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">The Measure of One's Worth</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/life.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/life.png" alt="LIFE.">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">LIFE.</h3>
+                                <p class="cv-portfolio-card__category">directing, editing and post production, pre production production, writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/the-spiral.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/spiral.png" alt="The Spiral">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">The Spiral</h3>
+                                <p class="cv-portfolio-card__category">directing, editing and post production, writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/break-me.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/breakme.jpg" alt="Break Me">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Break Me</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/closer-to-truth.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/closertotruth.jpg" alt="Closer To Truth">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Closer To Truth</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/gold-rush.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/goldrush.jpg" alt="Gold Rush: The Dirt">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Gold Rush: The Dirt</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/safe-smart-dating.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/safesmartdating.jpg" alt="Safe Smart Dating">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Safe Smart Dating</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/say-yes-to-the-dress.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/sayyestothedress.jpg" alt="Say Yes To The Dress">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Say Yes To The Dress</h3>
+                                <p class="cv-portfolio-card__category">editing and post production</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Writing -->
+            <section class="cv-portfolio-section">
+                <div class="cv-portfolio__container">
+                    <h2 class="cv-section-title">Writing</h2>
+                    <div class="cv-portfolio-grid-visual">
+                        <a href="portfolios/the-wild-hunt.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/wildhunt.jpg" alt="The Wild Hunt">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">The Wild Hunt</h3>
+                                <p class="cv-portfolio-card__category">writing</p>
+                            </div>
+                        </a>
+                        <a href="https://reelkpop.com" class="cv-portfolio-card" target="_blank" rel="noopener noreferrer">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/reelkpop.jpg" alt="Reel K-Pop">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Reel K-Pop</h3>
+                                <p class="cv-portfolio-card__category">writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/phases-of-the-moon.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/phases.jpg" alt="Phases of the Moon">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Phases of the Moon</h3>
+                                <p class="cv-portfolio-card__category">writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/della.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/della.png" alt="Della">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Della</h3>
+                                <p class="cv-portfolio-card__category">writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/life.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/life.png" alt="LIFE.">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">LIFE.</h3>
+                                <p class="cv-portfolio-card__category">directing, editing and post production, pre production production, writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/the-spiral.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/spiral.png" alt="The Spiral">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">The Spiral</h3>
+                                <p class="cv-portfolio-card__category">directing, editing and post production, writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/black-ocean.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/blackocean.jpg" alt="Black Ocean">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Black Ocean</h3>
+                                <p class="cv-portfolio-card__category">writing</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pre-Production & Production -->
+            <section class="cv-portfolio-section">
+                <div class="cv-portfolio__container">
+                    <h2 class="cv-section-title">Pre-Production & Production</h2>
+                    <div class="cv-portfolio-grid-visual">
+                        <a href="portfolios/your-touch.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/yourtouch.jpg" alt="Your Touch">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Your Touch</h3>
+                                <p class="cv-portfolio-card__category">pre production production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/the-disappearance-of-miss-scott.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/hazelscott.jpg" alt="The Disappearance of Miss Scott">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">The Disappearance of Miss Scott</h3>
+                                <p class="cv-portfolio-card__category">pre production production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/life.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/life.png" alt="LIFE.">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">LIFE.</h3>
+                                <p class="cv-portfolio-card__category">directing, editing and post production, pre production production, writing</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/say-yes-to-the-dress-america.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/sayyestothedressamerica.jpg" alt="Say Yes To The Dress: America">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Say Yes To The Dress: America</h3>
+                                <p class="cv-portfolio-card__category">pre production production</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/mute.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/mute.png" alt="Mute">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Mute</h3>
+                                <p class="cv-portfolio-card__category">pre production production</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appearances -->
+            <section class="cv-portfolio-section">
+                <div class="cv-portfolio__container">
+                    <h2 class="cv-section-title">Appearances</h2>
+                    <div class="cv-portfolio-grid-visual">
+                        <a href="portfolios/how-the-states-got-their-shapes.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/states.jpg" alt="How The States Got Their Shapes">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">How The States Got Their Shapes</h3>
+                                <p class="cv-portfolio-card__category">appearances</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/modern-marvels.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/modernmarvels.jpg" alt="Modern Marvels">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Modern Marvels</h3>
+                                <p class="cv-portfolio-card__category">appearances</p>
+                            </div>
+                        </a>
+                        <a href="portfolios/kindergeist-podcast.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/kindergeist.jpg" alt="Kindergeist Podcast">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Kindergeist Podcast</h3>
+                                <p class="cv-portfolio-card__category">appearances</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Design -->
+            <section class="cv-portfolio-section">
+                <div class="cv-portfolio__container">
+                    <h2 class="cv-section-title">Design</h2>
+                    <div class="cv-portfolio-grid-visual">
+                        <a href="portfolios/digital-art.html" class="cv-portfolio-card">
+                            <div class="cv-portfolio-card__image">
+                                <img src="static/images/portfolio/colorstudy.jpg" alt="Digital Art">
+                            </div>
+                            <div class="cv-portfolio-card__content">
+                                <h3 class="cv-portfolio-card__title">Digital Art</h3>
+                                <p class="cv-portfolio-card__category">design</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cv-cta-section">
+                <div class="cv-cta__container">
+                    <h2 class="cv-cta__title">Got a <strong>PROJECT</strong><br>IN MIND?</h2>
+                    <a href="contact.html" class="cta-button">Let's Talk</a>
+                </div>
+            </section>
+
+            <!-- Social Links -->
+            <section class="cv-social-section">
+                <div class="cv-social__container">
+                    <div class="cv-social__item">
+                        <span class="cv-social__label">Instagram</span>
+                        <a href="https://www.instagram.com/francesca_st_genev13ve.html" class="cv-social__link" target="_blank" rel="noopener">@francesca_st_genev13ve</a>
+                    </div>
+                    <div class="cv-social__item">
+                        <span class="cv-social__label">Tiktok</span>
+                        <a href="https://www.tiktok.com/@francesca_st_genev13ve" class="cv-social__link" target="_blank" rel="noopener">@francesca_st_genev13ve</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="ms-footer">
+        <div class="footer-content">
+            <p>&copy;2024 Francesca O'Hop</p>
+            <p class="footer-dot">.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

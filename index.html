@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francesca O'Hop - EDITOR - WRITER - FILMMAKER</title>
+    <meta name="description" content="EDITOR - WRITER - FILMMAKER">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+</head>
+<body data-theme="light" data-menu="fixed" class="page-home">
+    <!-- Loader -->
+    <div id="loaded"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header js-main-header auto-hide-header menu-center" data-blur="on">
+        <div class="main-header__layout">
+            <div class="main-header__inner">
+                <div class="main-header__logo">
+                    <div class="logo-dark">
+                        <a href="#home">
+                            <img src="static/images/logos/logos-with-background.png" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                    <div class="logo-light">
+                        <a href="#home">
+                            <img src="static/images/logos/logos-with-background-white.jpg" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                </div>
+                
+                <nav class="main-header__nav js-main-header__nav main-header__default">
+                    <ul class="navbar-nav">
+                        <li class="menu-item current-menu-item"><a href="#home">Home</a></li>
+                        <li class="menu-item"><a href="cv.html">CV</a></li>
+                        <li class="menu-item"><a href="editor-services.html">Editor Services</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="main-header--widgets">
+                    <div class="ms_theme_mode">
+                        <div class="ms_tm--inner">
+                            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                                <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <mask class="moon" id="moon-mask">
+                                        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                                        <circle cx="18" cy="8" r="8" fill="black"></circle>
+                                    </mask>
+                                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+                                    <g class="sun-beams" stroke="currentColor">
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="main-header__nav-trigger js-main-header__nav-trigger" aria-label="Toggle menu">
+                        <i class="main-header__nav-trigger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ms-main">
+        <div class="ms-page-content">
+            <!-- Hero Section with Video Background -->
+            <section class="hero-section" id="home">
+                <div class="hero-video-container">
+                    <video class="hero-video" autoplay muted loop playsinline>
+                        <source src="static/images/background.mp4" type="video/mp4" poster="static/images/background.jpg">
+                    </video>
+                    <div class="hero-overlay"></div>
+                </div>
+                
+                <div class="hero-content">
+                    <div class="marquee-text-wrapper">
+                        <div class="ms-tt-wrap">
+                            <ul class="ms-tt">
+                                <li class="ms-tt__text">Francesca <span>•</span> Florentyna <span>•</span> O'Hop <span>•</span>&nbsp;</li>
+                                <li class="ms-tt__text">Francesca <span>•</span> Florentyna <span>•</span> O'Hop <span>•</span>&nbsp;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Awards Slider Section -->
+            <section class="awards-slider-section">
+                <div class="awards-slider">
+                    <div class="awards-track">
+                        <div class="award-badge"><img src="static/images/awards/Winner-Los-Angeles-Film-Awards-2022.png" alt="Winner - Los Angeles Film Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Festigious-Los-Angeles-Monthly-Film-Competition-2022.png" alt="Winner - Festigious Los Angeles - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Open-Window-International-Film-Challenge-2022.png" alt="Winner - Open Window International Film Challenge - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-C-L-I-M-A-X-2022.png" alt="Winner - CLIMAX - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-International-World-Film-Awards-2022.png" alt="Winner - International World Film Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Art-Blocks-International-Film-Festival-2022.png" alt="Winner - Art Blocks International Film Festival - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-SENSEI-FilmFest-2022.png" alt="Winner - SENSEI FilmFest - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-New-York-Cinematography-AWARDS-NYCA-2023.png" alt="Winner - New York Cinematography AWARDS - 2023"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Cult-Critic-Movie-Awards-2022.png" alt="Winner - Cult Critic Movie Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-World-Film-Carnival-Singapore-2022.png" alt="Winner - World Film Carnival - Singapore - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Tagore-International-Film-Festival-2022.png" alt="Winner - Tagore International Film Festival - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Florence-Film-Awards-2022.png" alt="Winner - Florence Film Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Krimson-Horyzon-International-Film-Festival-2022.png" alt="Winner - Krimson Horyzon International Film Festival - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Oniros-Film-Awards-New-York-2022-1.png" alt="Winner - Oniros Film Awards - New York - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-FilmHaus-2023.png" alt="Winner - FilmHaus - 2023"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Big-Apple-Film-Festival-and-Screenplay-Competition-2024.png" alt="Winner - Big Apple Film Festival - 2024"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-F-A-R-O-Concurso-de-Cinema-Mediterrneo-e-Mundial-2024.png" alt="Winner - FARO - 2024"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-YETI-FilmFest-2024.png" alt="Winner - YETI FilmFest - 2024"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-LA-Under-the-Stars-Film-Festival-2022.png" alt="Winner - LA Under the Stars Film Festival - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Chicago-Indie-Film-Awards-2021.png" alt="Winner - Chicago Indie Film Awards - 2021"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-World-Film-Carnival-Singapore-2021.png" alt="Winner - World Film Carnival - Singapore - 2021"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Feel-The-Reel-International-Film-Festival-2021.png" alt="Winner - Feel The Reel International Film Festival - 2021"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Tagore-International-Film-Festival-2021.png" alt="Winner - Tagore International Film Festival - 2021"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-LWIFF-Lonely-Wolf-2022.png" alt="Winner - LWIFF Lonely Wolf - 2022"></div>
+                        
+                        <!-- Duplicate for seamless loop -->
+                        <div class="award-badge"><img src="static/images/awards/Winner-Los-Angeles-Film-Awards-2022.png" alt="Winner - Los Angeles Film Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Festigious-Los-Angeles-Monthly-Film-Competition-2022.png" alt="Winner - Festigious Los Angeles - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Open-Window-International-Film-Challenge-2022.png" alt="Winner - Open Window International Film Challenge - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-C-L-I-M-A-X-2022.png" alt="Winner - CLIMAX - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-International-World-Film-Awards-2022.png" alt="Winner - International World Film Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Art-Blocks-International-Film-Festival-2022.png" alt="Winner - Art Blocks International Film Festival - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-SENSEI-FilmFest-2022.png" alt="Winner - SENSEI FilmFest - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-New-York-Cinematography-AWARDS-NYCA-2023.png" alt="Winner - New York Cinematography AWARDS - 2023"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Cult-Critic-Movie-Awards-2022.png" alt="Winner - Cult Critic Movie Awards - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-World-Film-Carnival-Singapore-2022.png" alt="Winner - World Film Carnival - Singapore - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Tagore-International-Film-Festival-2022.png" alt="Winner - Tagore International Film Festival - 2022"></div>
+                        <div class="award-badge"><img src="static/images/awards/Winner-Florence-Film-Awards-2022.png" alt="Winner - Florence Film Awards - 2022"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Grid Section -->
+            <section class="portfolio-section" id="portfolio">
+                <div class="portfolio-container">
+                    <h2 class="section-heading">So many stories told, and so many yet to tell.</h2>
+                    
+                    <div class="portfolio-grid">
+                        <a href="portfolios/digital-art.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/colorstudy.jpg" alt="Digital Art">
+                            </div>
+                            <h3 class="portfolio-title">Digital Art</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Design</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/the-wild-hunt.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/wildhunt.jpg" alt="The Wild Hunt">
+                            </div>
+                            <h3 class="portfolio-title">The Wild Hunt</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/internal-corporate-videos.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/ypo.jpg" alt="Internal Corporate Videos">
+                            </div>
+                            <h3 class="portfolio-title">Internal Corporate Videos</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://reelkpop.com" class="portfolio-card" target="_blank" rel="noopener noreferrer">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/reelkpop.jpg" alt="Reel K-Pop">
+                            </div>
+                            <h3 class="portfolio-title">Reel K-Pop</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/memories-of-camille.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/memoriesofcamille.jpg" alt="Memories of Camille">
+                            </div>
+                            <h3 class="portfolio-title">Memories of Camille</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/your-touch.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/yourtouch.jpg" alt="Your Touch">
+                            </div>
+                            <h3 class="portfolio-title">Your Touch</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Pre-Production &amp; Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/the-disappearance-of-miss-scott.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/hazelscott.jpg" alt="The Disappearance of Miss Scott">
+                            </div>
+                            <h3 class="portfolio-title">The Disappearance of Miss Scott</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Pre-Production &amp; Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/the-measure-of-ones-worth.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/measure.png" alt="The Measure of One's Worth">
+                            </div>
+                            <h3 class="portfolio-title">The Measure of One's Worth</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/phases-of-the-moon.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/phases.jpg" alt="Phases of the Moon">
+                            </div>
+                            <h3 class="portfolio-title">Phases of the Moon</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/della.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/della.png" alt="Della">
+                            </div>
+                            <h3 class="portfolio-title">Della</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/life.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/life.png" alt="LIFE.">
+                            </div>
+                            <h3 class="portfolio-title">LIFE.</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Directing</span>
+                                <span class="portfolio-category">Editing &amp; Post</span>
+                                <span class="portfolio-category">Pre-Production &amp; Production</span>
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/say-yes-to-the-dress-america.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/sayyestothedressamerica.jpg" alt="Say Yes To The Dress: America">
+                            </div>
+                            <h3 class="portfolio-title">Say Yes To The Dress: America</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Pre-Production &amp; Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/how-the-states-got-their-shapes.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/states.jpg" alt="How The States Got Their Shapes">
+                            </div>
+                            <h3 class="portfolio-title">How The States Got Their Shapes</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Appearances</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/modern-marvels.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/modernmarvels.jpg" alt="Modern Marvels">
+                            </div>
+                            <h3 class="portfolio-title">Modern Marvels</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Appearances</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/kindergeist-podcast.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/kindergeist.jpg" alt="Kindergeist Podcast">
+                            </div>
+                            <h3 class="portfolio-title">Kindergeist Podcast</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Appearances</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/the-spiral.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/spiral.png" alt="The Spiral">
+                            </div>
+                            <h3 class="portfolio-title">The Spiral</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Directing</span>
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/break-me.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/breakme.jpg" alt="Break Me">
+                            </div>
+                            <h3 class="portfolio-title">Break Me</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/black-ocean.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/blackocean.jpg" alt="Black Ocean">
+                            </div>
+                            <h3 class="portfolio-title">Black Ocean</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Writing</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/say-yes-to-the-dress.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/sayyestothedress.jpg" alt="Say Yes To The Dress">
+                            </div>
+                            <h3 class="portfolio-title">Say Yes To The Dress</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/safe-smart-dating.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/safesmartdating.jpg" alt="Safe Smart Dating">
+                            </div>
+                            <h3 class="portfolio-title">Safe Smart Dating</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/mute.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/mute.png" alt="Mute">
+                            </div>
+                            <h3 class="portfolio-title">Mute</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Pre-Production &amp; Production</span>
+                            </div>
+                        </a>
+                        
+                        <a href="portfolios/closer-to-truth.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/closertotruth.jpg" alt="Closer to Truth">
+                            </div>
+                            <h3 class="portfolio-title">Closer to Truth</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+
+                        <a href="portfolios/gold-rush.html" class="portfolio-card">
+                            <div class="portfolio-image">
+                                <img src="static/images/portfolio/goldrush.jpg" alt="Gold Rush the Dirt">
+                            </div>
+                            <h3 class="portfolio-title">Gold Rush: The Dirt</h3>
+                            <div class="portfolio-meta">
+                                <span class="portfolio-category">Editing &amp; Post-Production</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact/Footer Section -->
+            <section class="contact-footer-section" id="contact">
+                <div class="contact-container">
+                    <div class="contact-row">
+                        <div class="contact-col">
+                            <h2 class="contact-heading">
+                                Let's create something extraordinary together.
+                            </h2>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-info">
+                        <div class="contact-col">
+                            <div class="contact-cta">
+                                <p class="cta-text">Got a project <span class="cta-highlight">in mind?</span></p>
+                                <a href="mailto:hello@francescaohop.com" class="cta-button">Let's Talk</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-col">
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/francesca_st_genev13ve/" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <span class="social-icon">Instagram</span>
+                                    <span class="social-handle">@francesca_st_genev13ve</span>
+                                </a>
+                                <a href="https://www.tiktok.com/@francesca_st_genev13ve" target="_blank" rel="noopener noreferrer" class="social-link">
+                                    <span class="social-icon">TikTok</span>
+                                    <span class="social-handle">@francesca_st_genev13ve</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="ms-footer">
+        <div class="footer-content">
+            <p>&copy;2024 Francesca O'Hop</p>
+            <p class="footer-dot">.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

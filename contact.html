@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Francesca O'Hop</title>
+    <meta name="description" content="Get in touch with Francesca O'Hop for your next project">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+</head>
+<body data-theme="light" data-menu="fixed">
+    <!-- Loader -->
+    <div id="loaded"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header js-main-header" data-blur="on">
+        <div class="main-header__layout">
+            <div class="main-header__inner">
+                <div class="main-header__logo">
+                    <div class="logo-dark">
+                        <a href="index.html">
+                            <img src="static/images/logos/logos-with-background.png" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                    <div class="logo-light">
+                        <a href="index.html">
+                            <img src="static/images/logos/logos-with-background-white.jpg" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                </div>
+                
+                <nav class="main-header__nav js-main-header__nav main-header__default">
+                    <ul class="navbar-nav">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item"><a href="cv.html">CV</a></li>
+                        <li class="menu-item"><a href="editor-services.html">Editor Services</a></li>
+                        <li class="menu-item current-menu-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="main-header--widgets">
+                    <div class="ms_theme_mode">
+                        <div class="ms_tm--inner">
+                            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                                <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <mask class="moon" id="moon-mask">
+                                        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                                        <circle cx="18" cy="8" r="8" fill="black"></circle>
+                                    </mask>
+                                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+                                    <g class="sun-beams" stroke="currentColor">
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="main-header__nav-trigger js-main-header__nav-trigger" aria-label="Toggle menu">
+                        <i class="main-header__nav-trigger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ms-main">
+        <div class="ms-page-content">
+            <!-- Hero Section -->
+            <section class="page-hero">
+                <div class="page-hero__container">
+                    <h1 class="page-hero__title">Let's Create Together</h1>
+                    <p class="page-hero__subtitle">Ready to bring your vision to life</p>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-page-section">
+                <div class="contact-page-container">
+                    <div class="contact-page-grid">
+                        <!-- Contact Info -->
+                        <div class="contact-info">
+                            <h2 class="contact-info__title">Get In Touch</h2>
+                            <p class="contact-info__text">
+                                Whether you have a project in mind, want to discuss collaboration opportunities, 
+                                or just want to say hello, I'd love to hear from you.
+                            </p>
+
+                            <div class="contact-methods">
+                                <a href="mailto:hello@francescaohop.com" class="contact-method">
+                                    <div class="contact-method__icon">✉️</div>
+                                    <div class="contact-method__content">
+                                        <h3 class="contact-method__title">Email</h3>
+                                        <p class="contact-method__detail">hello@francescaohop.com</p>
+                                    </div>
+                                </a>
+
+                                <div class="contact-method">
+                                    <div class="contact-method__icon">📍</div>
+                                    <div class="contact-method__content">
+                                        <h3 class="contact-method__title">Location</h3>
+                                        <p class="contact-method__detail">Available for remote and on-location work</p>
+                                    </div>
+                                </div>
+
+                                <div class="contact-method">
+                                    <div class="contact-method__icon">⏰</div>
+                                    <div class="contact-method__content">
+                                        <h3 class="contact-method__title">Response Time</h3>
+                                        <p class="contact-method__detail">Usually within 24-48 hours</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-social">
+                                <h3 class="contact-social__title">Connect With Me</h3>
+                                <div class="contact-social__links">
+                                    <a href="https://www.instagram.com/francesca_st_genev13ve/" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+                                        <span class="contact-social-link__label">Instagram</span>
+                                        <span class="contact-social-link__handle">@francesca_st_genev13ve</span>
+                                    </a>
+                                    <a href="https://www.tiktok.com/@francesca_st_genev13ve" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+                                        <span class="contact-social-link__label">TikTok</span>
+                                        <span class="contact-social-link__handle">@francesca_st_genev13ve</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="contact-form-wrapper">
+                            <form class="contact-form" action="https://formspree.io/f/xdkooprz" method="POST">
+                                <h2 class="contact-form__title">Send a Message</h2>
+                                
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" name="_replyto" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" id="subject" name="_subject" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea id="message" name="message" class="form-textarea" rows="6" required></textarea>
+                                </div>
+
+                                <!-- Hidden fields for Formspree -->
+                                <input type="hidden" name="_next" value="https://francescaohop.com/contact.html?success=true">
+                                <input type="text" name="_gotcha" style="display:none">
+
+                                <button type="submit" class="form-submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="ms-footer">
+        <div class="footer-content">
+            <p>&copy;2024 Francesca O'Hop</p>
+            <p class="footer-dot">.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+    <script>
+        // Check if form was submitted successfully
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            const formWrapper = document.querySelector('.contact-form-wrapper');
+            formWrapper.innerHTML = `
+                <div style="text-align: center; padding: 4rem 2rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--color-contrast-higher);">Message Sent Successfully!</h2>
+                    <p style="font-size: 1.2rem; color: var(--color-contrast-medium); margin-bottom: 2rem;">
+                        Thank you for reaching out. I'll get back to you within 24-48 hours.
+                    </p>
+                    <a href="contact.html" style="display: inline-block; padding: 1rem 2rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                        Send Another Message
+                    </a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

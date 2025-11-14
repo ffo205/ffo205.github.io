@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Services - Francesca O'Hop</title>
+    <meta name="description" content="Professional editing services for film, television, and digital content">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="static/favicon/site.webmanifest">
+    <link rel="shortcut icon" href="static/favicon/favicon.ico">
+</head>
+<body data-theme="light" data-menu="fixed" class="page-editor-services">
+    <!-- Loader -->
+    <div id="loaded"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header js-main-header" data-blur="on">
+        <div class="main-header__layout">
+            <div class="main-header__inner">
+                <div class="main-header__logo">
+                    <div class="logo-dark">
+                        <a href="index.html">
+                            <img src="static/images/logos/logos-with-background.png" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                    <div class="logo-light">
+                        <a href="index.html">
+                            <img src="static/images/logos/logos-with-background-white.jpg" alt="Francesca O'Hop">
+                        </a>
+                    </div>
+                </div>
+                
+                <nav class="main-header__nav js-main-header__nav main-header__default">
+                    <ul class="navbar-nav">
+                        <li class="menu-item"><a href="index.html">Home</a></li>
+                        <li class="menu-item"><a href="cv.html">CV</a></li>
+                        <li class="menu-item current-menu-item"><a href="editor-services.html">Editor Services</a></li>
+                        <li class="menu-item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="main-header--widgets">
+                    <div class="ms_theme_mode">
+                        <div class="ms_tm--inner">
+                            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                                <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <mask class="moon" id="moon-mask">
+                                        <rect x="0" y="0" width="100%" height="100%" fill="white"></rect>
+                                        <circle cx="18" cy="8" r="8" fill="black"></circle>
+                                    </mask>
+                                    <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor"></circle>
+                                    <g class="sun-beams" stroke="currentColor">
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="main-header__nav-trigger js-main-header__nav-trigger" aria-label="Toggle menu">
+                        <i class="main-header__nav-trigger-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="ms-main">
+        <div class="ms-page-content">
+            <!-- Hero Section -->
+            <section class="editor-hero">
+                <div class="editor-hero__container">
+                    <div class="editor-hero__content">
+                        <h1 class="editor-hero__title">Premium Editing services<br>at affordable prices</h1>
+                        <div class="editor-hero__subtitle-box">
+                            <h2 class="editor-hero__subtitle">Whether it's a music video, a memorial montage, a graduation or a mitzvah, I am always eager to help!</h2>
+                            <a href="contact.html" class="editor-hero__cta">START YOUR PROJECT TODAY</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Section -->
+            <section class="editor-video">
+                <div class="editor-video__container">
+                    <div class="editor-video__wrapper">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://www.youtube.com/embed/Kh0ugrJF21I" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h2 class="editor-video__heading">Services Included</h2>
+                </div>
+            </section>
+
+            <!-- Services Grid -->
+            <section class="editor-services">
+                <div class="editor-services__container">
+                    <div class="editor-services__grid">
+                        <!-- Service 1 -->
+                        <div class="editor-service-card">
+                            <div class="editor-service-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="editor-service-card__title">Planning</h3>
+                            <p class="editor-service-card__description">Join me on complimentary calls throughout the process, where I can answer your questions in detail!</p>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div class="editor-service-card">
+                            <div class="editor-service-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="editor-service-card__title">Draft 0</h3>
+                            <p class="editor-service-card__description">For every project, I create a 'Draft 0' tailored to your vision, aligning everything to music and outlining the future steps.</p>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="editor-service-card">
+                            <div class="editor-service-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="editor-service-card__title">Multiple Drafts</h3>
+                            <p class="editor-service-card__description">Multiple drafts - usually 3 drafts total - are provided at no additional cost to you.</p>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div class="editor-service-card">
+                            <div class="editor-service-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                                    <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                                    <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <h3 class="editor-service-card__title">Motion Graphics</h3>
+                            <p class="editor-service-card__description">When the perfect elements can't be found elsewhere, I create bespoke graphics in After Effects just for you.</p>
+                        </div>
+
+                        <!-- Service 5 -->
+                        <div class="editor-service-card">
+                            <div class="editor-service-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="editor-service-card__title">Timely Results</h3>
+                            <p class="editor-service-card__description">Where other editors will take months, you'll get a professional video in a 4 week turnaround - sometimes even faster!</p>
+                        </div>
+
+                        <!-- Service 6 -->
+                        <div class="editor-service-card">
+                            <div class="editor-service-card__icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3 class="editor-service-card__title">Technical Support</h3>
+                            <p class="editor-service-card__description">Not sure which file type is the best, or how to share your videos with your friends? I got your back!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section class="editor-portfolio">
+                <div class="editor-portfolio__container">
+                    <h2 class="editor-portfolio__title">So many possibilities for your videos!</h2>
+                    <div class="editor-portfolio__grid">
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/ypo.jpg" alt="Internal Corporate Videos" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Internal Corporate Videos</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/memoriesofcamille.jpg" alt="Memories of Camille" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Memories of Camille</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/measure.png" alt="The Measure of One's Worth" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">The Measure of One's Worth</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/life.png" alt="LIFE." class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">LIFE.</h3>
+                                <h4 class="editor-portfolio-card__subtitle">directing, editing and post production, pre production production, writing</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/spiral.png" alt="The Spiral" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">The Spiral</h3>
+                                <h4 class="editor-portfolio-card__subtitle">directing, editing and post production, writing</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/breakme.jpg" alt="Break Me" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Break Me</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/closertotruth.jpg" alt="Closer To Truth" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Closer To Truth</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/goldrush.jpg" alt="Gold Rush: The Dirt" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Gold Rush: The Dirt</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/safesmartdating.jpg" alt="Safe Smart Dating" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Safe Smart Dating</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+
+                        <a href="#" class="editor-portfolio-card">
+                            <figure class="editor-portfolio-card__figure">
+                                <img src="static/images/portfolio/sayyestothedress.jpg" alt="Say Yes To The Dress" class="editor-portfolio-card__image">
+                            </figure>
+                            <div class="editor-portfolio-card__info">
+                                <h3 class="editor-portfolio-card__title">Say Yes To The Dress</h3>
+                                <h4 class="editor-portfolio-card__subtitle">editing and post production</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="editor-pricing">
+                <div class="editor-pricing__container">
+                    <div class="editor-pricing__header">
+                        <h2 class="editor-pricing__title">Pricing Estimates</h2>
+                        <p class="editor-pricing__subtitle">The prices of my most popular video packages.</p>
+                    </div>
+                    <div class="editor-pricing__grid">
+                        <!-- Pricing Card 1 -->
+                        <div class="editor-pricing-card">
+                            <h3 class="editor-pricing-card__title">≤ 4 Minutes</h3>
+                            <div class="editor-pricing-card__price">
+                                <sup>$</sup>1000<sub>Starting Price</sub>
+                            </div>
+                            <ul class="editor-pricing-card__features">
+                                <li>Planning</li>
+                                <li>Draft 0</li>
+                                <li>Multiple Drafts</li>
+                                <li>Motion Graphics</li>
+                                <li>Timely Results</li>
+                                <li>Technical Support</li>
+                            </ul>
+                            <a href="contact.html" class="editor-pricing-card__button">Learn more</a>
+                        </div>
+
+                        <!-- Pricing Card 2 -->
+                        <div class="editor-pricing-card editor-pricing-card--featured">
+                            <h3 class="editor-pricing-card__title">8 Minutes</h3>
+                            <div class="editor-pricing-card__price">
+                                <sup>$</sup>1400<sub>Starting Price</sub>
+                            </div>
+                            <ul class="editor-pricing-card__features">
+                                <li>Planning</li>
+                                <li>Draft 0</li>
+                                <li>Multiple Drafts</li>
+                                <li>Motion Graphics</li>
+                                <li>Timely Results</li>
+                                <li>Technical Support</li>
+                            </ul>
+                            <a href="contact.html" class="editor-pricing-card__button">Learn more</a>
+                        </div>
+
+                        <!-- Pricing Card 3 -->
+                        <div class="editor-pricing-card">
+                            <h3 class="editor-pricing-card__title">10 Minutes</h3>
+                            <div class="editor-pricing-card__price">
+                                <sup>$</sup>1600<sub>Starting Price</sub>
+                            </div>
+                            <ul class="editor-pricing-card__features">
+                                <li>Planning</li>
+                                <li>Draft 0</li>
+                                <li>Multiple Drafts</li>
+                                <li>Motion Graphics</li>
+                                <li>Timely Results</li>
+                                <li>Technical Support</li>
+                            </ul>
+                            <a href="contact.html" class="editor-pricing-card__button">Learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="ms-footer">
+        <div class="footer-content">
+            <p>&copy;2024 Francesca O'Hop</p>
+            <p class="footer-dot">.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
