@@ -16,6 +16,23 @@
     <link rel="shortcut icon" href="static/favicon/favicon.ico">
 </head>
 <body data-theme="light" data-menu="fixed" class="page-home">
+    <!-- Film Loading Screen -->
+    <div id="film-loader" class="film-loader">
+        <div class="film-loader__content">
+            <div class="film-countdown">
+                <div class="countdown-circle">
+                    <svg viewBox="0 0 200 200" class="countdown-svg">
+                        <circle cx="100" cy="100" r="90" class="countdown-track"></circle>
+                        <circle cx="100" cy="100" r="90" class="countdown-progress"></circle>
+                    </svg>
+                    <div class="countdown-number">3</div>
+                </div>
+            </div>
+            <div class="film-grain"></div>
+            <div class="film-vignette"></div>
+        </div>
+    </div>
+
     <!-- Loader -->
     <div id="loaded"></div>
 
@@ -438,5 +455,54 @@
     </footer>
 
     <script src="static/js/main.js"></script>
+    <script>
+        // Film-inspired loading screen
+        (function() {
+            const filmLoader = document.getElementById('film-loader');
+            const countdownNumber = document.querySelector('.countdown-number');
+            const heroVideo = document.querySelector('.hero-video');
+            
+            let count = 3;
+            let videoLoaded = false;
+            let countdownComplete = false;
+            
+            // Check if video can play
+            if (heroVideo) {
+                heroVideo.addEventListener('loadeddata', function() {
+                    videoLoaded = true;
+                    checkAndRemoveLoader();
+                });
+                
+                // Fallback in case video fails to load
+                setTimeout(() => {
+                    if (!videoLoaded) {
+                        videoLoaded = true;
+                        checkAndRemoveLoader();
+                    }
+                }, 5000);
+            }
+            
+            // Countdown animation
+            const countdownInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdownNumber.textContent = count;
+                } else {
+                    clearInterval(countdownInterval);
+                    countdownComplete = true;
+                    checkAndRemoveLoader();
+                }
+            }, 800);
+            
+            function checkAndRemoveLoader() {
+                if (videoLoaded && countdownComplete) {
+                    filmLoader.classList.add('fade-out');
+                    setTimeout(() => {
+                        filmLoader.style.display = 'none';
+                    }, 600);
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
