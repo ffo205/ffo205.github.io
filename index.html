@@ -101,8 +101,12 @@
             <!-- Hero Section with Video Background -->
             <section class="hero-section" id="home">
                 <div class="hero-video-container">
-                    <video class="hero-video" autoplay muted loop playsinline>
-                        <source src="static/images/background.mp4" type="video/mp4" poster="static/images/background.jpg">
+                    <video class="hero-video" autoplay muted loop playsinline poster="static/images/background.jpg">
+                        <!-- Mobile Video (First priority for small screens) -->
+                        <source src="static/images/background-480p.mp4" type="video/mp4" media="(max-width: 768px)">
+                        
+                        <!-- Desktop Video (Fallback for larger screens) -->
+                        <source src="static/images/background-720p.mp4" type="video/mp4">
                     </video>
                     <div class="hero-overlay"></div>
                 </div>
@@ -532,27 +536,26 @@
             let videoLoaded = false;
             let countdownComplete = false;
             
-            // Check if video can play
+            // 1. Listen for video load
             if (heroVideo) {
                 heroVideo.addEventListener('loadeddata', function() {
                     videoLoaded = true;
                     checkAndRemoveLoader();
                 });
-                
-                // Fallback in case video fails to load
-                setTimeout(() => {
-                    if (!videoLoaded) {
-                        videoLoaded = true;
-                        checkAndRemoveLoader();
-                    }
-                }, 5000);
             }
             
-            // Countdown animation
+            // 2. SAFETY NET: Force load after 2 seconds even if video is slow
+            setTimeout(() => {
+                console.log("Force removing loader due to slow connection");
+                videoLoaded = true; 
+                checkAndRemoveLoader();
+            }, 2500); 
+            
+            // 3. Countdown animation
             const countdownInterval = setInterval(() => {
                 count--;
                 if (count > 0) {
-                    countdownNumber.textContent = count;
+                    if(countdownNumber) countdownNumber.textContent = count;
                 } else {
                     clearInterval(countdownInterval);
                     countdownComplete = true;
@@ -562,10 +565,12 @@
             
             function checkAndRemoveLoader() {
                 if (videoLoaded && countdownComplete) {
-                    filmLoader.classList.add('fade-out');
-                    setTimeout(() => {
-                        filmLoader.style.display = 'none';
-                    }, 600);
+                    if(filmLoader) {
+                        filmLoader.classList.add('fade-out');
+                        setTimeout(() => {
+                            filmLoader.style.display = 'none';
+                        }, 600);
+                    }
                 }
             }
         })();
