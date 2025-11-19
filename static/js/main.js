@@ -27,19 +27,48 @@ themeToggle.addEventListener('click', () => {
 // Mobile Menu Toggle
 // ===========================================================================
 
-const menuTrigger = document.querySelector('.main-header__nav-trigger');
-const nav = document.querySelector('.main-header__nav');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuTrigger = document.querySelector('.main-header__nav-trigger');
+    const nav = document.querySelector('.main-header__nav');
+    const menuLinks = document.querySelectorAll('.menu-item a');
+    const icon = document.querySelector('.main-header__nav-trigger-icon');
 
-if (menuTrigger && nav) {
-    menuTrigger.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        menuTrigger.classList.toggle('active');
-        
-        // Toggle hamburger animation
-        const icon = menuTrigger.querySelector('.main-header__nav-trigger-icon');
-        icon.classList.toggle('open');
-    });
-}
+    if (menuTrigger && nav) {
+        console.log('Mobile menu initialized'); // Check console to verify this runs
+
+        // Toggle Menu
+        menuTrigger.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default button behavior
+            e.stopPropagation(); // Stop bubble up
+            
+            console.log('Menu clicked'); // Verify click is registering
+            
+            nav.classList.toggle('active');
+            menuTrigger.classList.toggle('active');
+            
+            // Handle icon animation class explicitly
+            if (icon) {
+                // If trigger has active, icon should too
+                if (menuTrigger.classList.contains('active')) {
+                    icon.classList.add('active');
+                } else {
+                    icon.classList.remove('active');
+                }
+            }
+        });
+
+        // Close menu when a link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuTrigger.classList.remove('active');
+                if(icon) icon.classList.remove('active');
+            });
+        });
+    } else {
+        console.error('Menu elements not found: Trigger or Nav missing');
+    }
+});
 
 // ===========================================================================
 // Header Show/Hide on Scroll & Transparency
@@ -295,11 +324,15 @@ window.addEventListener('load', () => {
 const awardsTrack = document.querySelector('.awards-track');
 if (awardsTrack) {
     awardsTrack.addEventListener('mouseenter', () => {
-        awardsTrack.style.animationPlayState = 'paused';
+        if (awardsTrack.pauseAnimation) {
+            awardsTrack.pauseAnimation();
+        }
     });
     
     awardsTrack.addEventListener('mouseleave', () => {
-        awardsTrack.style.animationPlayState = 'running';
+        if (awardsTrack.resumeAnimation) {
+            awardsTrack.resumeAnimation();
+        }
     });
 }
 
@@ -310,11 +343,15 @@ if (awardsTrack) {
 const marquees = document.querySelectorAll('.ms-tt');
 marquees.forEach(marquee => {
     marquee.addEventListener('mouseenter', () => {
-        marquee.style.animationPlayState = 'paused';
+        if (marquee.pauseAnimation) {
+            marquee.pauseAnimation();
+        }
     });
     
     marquee.addEventListener('mouseleave', () => {
-        marquee.style.animationPlayState = 'running';
+        if (marquee.resumeAnimation) {
+            marquee.resumeAnimation();
+        }
     });
 });
 
@@ -536,3 +573,213 @@ if (document.readyState === 'loading') {
 } else {
     initPortfolioParallax();
 }
+
+// ===========================================================================
+// Marquee Text Fix for Seamless Loop
+// ===========================================================================
+
+function initMarquee() {
+    // Handle name carousel with JavaScript animation
+    const marquees = document.querySelectorAll('.ms-tt');
+    
+    marquees.forEach(marquee => {
+        const items = marquee.querySelectorAll('.ms-tt__text');
+        
+        if (items.length > 0) {
+            // Clear any previous inline styles
+            items.forEach(item => {
+                item.style.width = '';
+                item.style.minWidth = '';
+                item.style.maxWidth = '';
+                item.style.flexBasis = '';
+            });
+            
+            // Force reflow
+            void marquee.offsetWidth;
+            
+            // Measure all items
+            const widths = Array.from(items).map(item => item.getBoundingClientRect().width);
+            const maxWidth = Math.max(...widths);
+            const roundedWidth = Math.ceil(maxWidth);
+            
+            // Force all items to have the exact same width
+            items.forEach(item => {
+                item.style.width = `${roundedWidth}px`;
+                item.style.minWidth = `${roundedWidth}px`;
+                item.style.maxWidth = `${roundedWidth}px`;
+                item.style.flexBasis = `${roundedWidth}px`;
+            });
+            
+            // Calculate exact distance for one complete cycle
+            // With 4 duplicate sets, we move exactly 1/4 of total width
+            const totalWidth = marquee.scrollWidth;
+            const cycleDistance = totalWidth / 4;
+            
+            // Determine duration based on viewport width
+            let duration = 40000; // Default 40s
+            if (window.innerWidth <= 480) {
+                duration = 16000;
+            } else if (window.innerWidth <= 768) {
+                duration = 24000;
+            } else if (window.innerWidth <= 1024) {
+                duration = 32000;
+            }
+            
+            // Cancel any existing animation
+            if (marquee.animationId) {
+                cancelAnimationFrame(marquee.animationId);
+            }
+            
+            // Start JavaScript animation
+            let startTime = null;
+            const isMobile = window.innerWidth <= 768;
+            
+            function animate(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = (elapsed % duration) / duration;
+                let translateX = -(progress * cycleDistance);
+                
+                // Round to whole pixels on mobile to prevent sub-pixel jitter
+                if (isMobile) {
+                    translateX = Math.round(translateX);
+                }
+                
+                marquee.style.transform = `translate3d(${translateX}px, 0, 0)`;
+                
+                marquee.animationId = requestAnimationFrame(animate);
+            }
+            
+            marquee.animationId = requestAnimationFrame(animate);
+            
+            // Store pause/resume functions for hover
+            marquee.isPaused = false;
+            marquee.pauseAnimation = function() {
+                if (!this.isPaused && this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                    this.isPaused = true;
+                }
+            };
+            marquee.resumeAnimation = function() {
+                if (this.isPaused) {
+                    this.isPaused = false;
+                    this.animationId = requestAnimationFrame(animate);
+                }
+            };
+        }
+    });
+    
+    // Handle awards carousel with JavaScript animation
+    const awardsTracks = document.querySelectorAll('.awards-track');
+    
+    awardsTracks.forEach(track => {
+        const badges = track.querySelectorAll('.award-badge');
+        
+        if (badges.length > 0) {
+            // Clear any previous inline styles
+            badges.forEach(badge => {
+                badge.style.width = '';
+                badge.style.minWidth = '';
+                badge.style.maxWidth = '';
+                badge.style.flexBasis = '';
+            });
+            
+            // Force reflow
+            void track.offsetWidth;
+            
+            // Measure all badges (after images have loaded naturally)
+            const widths = Array.from(badges).map(badge => badge.getBoundingClientRect().width);
+            const maxWidth = Math.max(...widths);
+            const roundedWidth = Math.ceil(maxWidth);
+            
+            // Force all badges to have the exact same width
+            badges.forEach(badge => {
+                badge.style.width = `${roundedWidth}px`;
+                badge.style.minWidth = `${roundedWidth}px`;
+                badge.style.maxWidth = `${roundedWidth}px`;
+                badge.style.flexBasis = `${roundedWidth}px`;
+            });
+            
+            // Force reflow to apply changes
+            void track.offsetWidth;
+            
+            // Calculate exact distance for one complete cycle
+            // With 4 duplicate sets, we move exactly 1/4 of total width
+            const totalWidth = track.scrollWidth;
+            const cycleDistance = totalWidth / 4;
+            
+            // Determine duration based on viewport width
+            // Slowed down even further
+            let duration = 100000; // Default 100s
+            if (window.innerWidth <= 768) {
+                duration = 50000; // 50s on mobile
+            }
+            
+            // Cancel any existing animation
+            if (track.animationId) {
+                cancelAnimationFrame(track.animationId);
+            }
+            
+            // Start JavaScript animation
+            let startTime = null;
+            const isMobile = window.innerWidth <= 768;
+            
+            function animate(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const elapsed = currentTime - startTime;
+                const progress = (elapsed % duration) / duration;
+                let translateX = -(progress * cycleDistance);
+                
+                // Round to whole pixels on mobile to prevent sub-pixel jitter
+                if (isMobile) {
+                    translateX = Math.round(translateX);
+                }
+                
+                track.style.transform = `translate3d(${translateX}px, 0, 0)`;
+                
+                track.animationId = requestAnimationFrame(animate);
+            }
+            
+            track.animationId = requestAnimationFrame(animate);
+            
+            // Store pause/resume functions for hover
+            track.isPaused = false;
+            track.pauseAnimation = function() {
+                if (!this.isPaused && this.animationId) {
+                    cancelAnimationFrame(this.animationId);
+                    this.isPaused = true;
+                }
+            };
+            track.resumeAnimation = function() {
+                if (this.isPaused) {
+                    this.isPaused = false;
+                    this.animationId = requestAnimationFrame(animate);
+                }
+            };
+        }
+    });
+}
+
+// Run immediately and on load
+initMarquee();
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initMarquee, 100);
+    });
+} else {
+    setTimeout(initMarquee, 100);
+}
+
+// Re-run on fonts loaded
+if (document.fonts) {
+    document.fonts.ready.then(() => {
+        setTimeout(initMarquee, 100);
+    });
+}
+
+window.addEventListener('resize', () => {
+    // Debounce resize events
+    clearTimeout(window.marqueeResizeTimer);
+    window.marqueeResizeTimer = setTimeout(initMarquee, 250);
+});

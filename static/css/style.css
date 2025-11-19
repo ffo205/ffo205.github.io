@@ -365,6 +365,47 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
     opacity: 1;
 }
 
+.main-header__nav-trigger {
+    position: relative;
+    z-index: 1001; /* Higher than the nav (999) */
+}
+
+@media (max-width: 1023px) {
+    .main-header__nav {
+        /* Force display flex to override the global "display: none" */
+        display: flex !important; 
+        
+        /* Positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-bg);
+        z-index: 999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /* Hidden State */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        pointer-events: none; 
+    }
+
+    .main-header__nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        
+        /* CRITICAL: Catch clicks when visible */
+        pointer-events: auto; 
+    }
+}
+
 /* In dark mode, always show light logo */
 [data-theme="dark"] .logo-dark {
     opacity: 0;
@@ -651,16 +692,32 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
     width: 100%;
     overflow: hidden;
     position: relative;
+    /* Force GPU acceleration and prevent sub-pixel rendering issues */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .ms-tt {
-    display: flex;
+    display: inline-flex;
     white-space: nowrap;
-    animation: marqueeScroll 40s linear infinite;
+    /* Animation will be controlled by JavaScript */
     list-style: none;
     padding: 0;
     margin: 0;
     will-change: transform;
+    /* Force GPU acceleration for smoother animation */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Prevent sub-pixel rendering */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.ms-tt li {
+    flex-shrink: 0;
+    display: inline-block;
 }
 
 .ms-tt__text {
@@ -672,6 +729,17 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px #ffffff;
     letter-spacing: -0.02em;
+    /* Prevent layout shift */
+    flex-shrink: 0;
+    white-space: nowrap;
+    /* Force crisp rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Force consistent box sizing */
+    box-sizing: border-box;
+    /* Prevent width changes */
+    overflow: visible;
 }
 
 .ms-tt__text span {
@@ -681,18 +749,69 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
 
 @keyframes marqueeScroll {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translate3d(-25%, 0, 0);
     }
 }
 
-@media (max-width: 768px) {
+/* Tablet devices */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .ms-tt {
+        animation: marqueeScroll 32s linear infinite;
+    }
+    
+    .white-text .ms-tt {
+        animation: marqueeScroll 40s linear infinite;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) and (min-width: 481px) {
+    .ms-tt {
+        animation: marqueeScroll 24s linear infinite;
+    }
+    
     .ms-tt__text {
         font-size: clamp(2rem, 12vw, 4rem);
         -webkit-text-stroke: 1.5px #ffffff;
         padding-right: 2rem;
+        /* Force consistent rendering */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .ms-tt__text span {
+        margin: 0 0.5rem;
+    }
+    
+    .white-text .ms-tt {
+        animation: marqueeScroll 30s linear infinite;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .ms-tt {
+        animation: marqueeScroll 16s linear infinite;
+    }
+    
+    .ms-tt__text {
+        font-size: clamp(2rem, 12vw, 4rem);
+        -webkit-text-stroke: 1.5px #ffffff;
+        padding-right: 2rem;
+        /* Force consistent rendering */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .ms-tt__text span {
+        margin: 0 0.5rem;
+    }
+    
+    .white-text .ms-tt {
+        animation: marqueeScroll 20s linear infinite;
     }
 }
 
@@ -744,18 +863,34 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
 .awards-slider {
     width: 100%;
     overflow: hidden;
+    /* Force GPU acceleration and prevent sub-pixel rendering issues */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .awards-track {
     display: flex;
     gap: 3rem;
-    animation: awardsScroll 10s linear infinite;
+    /* Animation will be controlled by JavaScript */
     will-change: transform;
+    /* Force GPU acceleration for smoother animation */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Prevent sub-pixel rendering */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* Smooth rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .award-badge {
-    min-width: 250px;
-    height: 250px;
+    min-width: 350px;
+    width: 350px;
+    max-width: 350px;
+    height: 350px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -763,6 +898,7 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
     background: transparent;
     padding: 0.5rem;
     position: relative;
+    box-sizing: border-box;
 }
 
 .award-badge img {
@@ -778,21 +914,32 @@ body:not(.page-home) .main-header:not(.scrolled)[data-theme="dark"] .logo-light 
 
 @keyframes awardsScroll {
     0% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translate3d(-25%, 0, 0);
     }
 }
 
 @media (max-width: 768px) {
     .award-badge {
-        min-width: 130px;
-        height: 130px;
+        min-width: 220px;
+        width: 220px;
+        max-width: 220px;
+        height: 220px;
+        padding: 0; /* Fixes padding issues on mobile */
     }
     
     .awards-track {
         gap: 2rem;
+        /* Animation removed so JS can handle the loop smoothly */
+    }
+    
+    /* Ensure images fit within the smaller badges */
+    .award-badge img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
     }
 }
 
